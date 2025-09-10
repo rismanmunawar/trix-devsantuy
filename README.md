@@ -3,17 +3,17 @@
 > Lightweight Trix WYSIWYG wrapper — limited toolbar (**Bold, Italic, Heading, Numbered, Bullet**) + **Undo/Redo**.  
 > Works with plain HTML, Laravel, Vite/webpack, React/Vue.
 
-**Demo (GitHub Pages)**: after enabling Pages to serve `/docs`, open `https://<USERNAME>.github.io/trix-devsantuy/`
+**Demo (GitHub Pages)**: after enabling Pages to serve `/docs`, open `https://<rismanmunawar>.github.io/trix-devsantuy/`
 
 ## Quick Start (CDN)
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trix@2.1.1/dist/trix.css">
 <script src="https://cdn.jsdelivr.net/npm/trix@2.1.1/dist/trix.umd.min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/<USERNAME>/trix-devsantuy@v0.1.0/dist/dm-trix.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/<rismanmunawar>/trix-devsantuy@v0.1.0/dist/dm-trix.css">
 <div id="editor"></div>
 <script type="module">
-  import DmTrix from "https://cdn.jsdelivr.net/gh/<USERNAME>/trix-devsantuy@v0.1.0/dist/dm-trix.js"
+  import DmTrix from "https://cdn.jsdelivr.net/gh/<rismanmunawar>/trix-devsantuy@v0.1.0/dist/dm-trix.js"
   new DmTrix(document.getElementById("editor"), { name: "content" })
 </script>
 ```
@@ -22,7 +22,7 @@
 ```bat
 npm init -y
 npm install trix
-npm install github:<USERNAME>/trix-devsantuy#v0.1.0
+npm install github:<rismanmunawar>/trix-devsantuy#v0.1.0
 ```
 Use in your JS entry (Vite/webpack):
 ```js
