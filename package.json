@@ -1,0 +1,21 @@
+{
+  "name": "trix-devsantuy",
+  "version": "0.1.0",
+  "description": "Lightweight Trix wrapper with limited toolbar (Bold, Italic, Heading, Number, Bullet) + Undo/Redo.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./dist/dm-trix.js",
+    "./dist/dm-trix.js": "./dist/dm-trix.js",
+    "./dist/dm-trix.css": "./dist/dm-trix.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<USERNAME>/trix-devsantuy.git"
+  }
+}

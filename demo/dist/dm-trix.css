@@ -1,0 +1,19 @@
+/* dist/dm-trix.css — trix-devsantuy (MIT) */
+
+.dmtrix, .dmtrix * { color-scheme: light; }
+trix-editor { display:block; min-height: 200px; }
+
+/* Disable all buttons by default */
+trix-toolbar .trix-button { opacity: .35; pointer-events: none; }
+
+/* Enable allowed buttons + undo/redo */
+trix-toolbar .trix-button[data-trix-attribute="bold"],
+trix-toolbar .trix-button[data-trix-attribute="italic"],
+trix-toolbar .trix-button[data-trix-attribute="heading1"],
+trix-toolbar .trix-button[data-trix-attribute="number"],
+trix-toolbar .trix-button[data-trix-attribute="bullet"],
+trix-toolbar .trix-button[data-trix-action="undo"],
+trix-toolbar .trix-button[data-trix-action="redo"] {
+  opacity: 1;
+  pointer-events: auto;
+}

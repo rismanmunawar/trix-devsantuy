@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>trix-devsantuy — Demo</title>
+
+  <!-- Trix core (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trix@2.1.1/dist/trix.css">
+  <script src="https://cdn.jsdelivr.net/npm/trix@2.1.1/dist/trix.umd.min.js"></script>
+
+  <!-- Wrapper CSS -->
+  <link rel="stylesheet" href="./dist/dm-trix.css">
+
+  <style>
+    body { margin: 24px; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    .row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+    input[type="text"] { padding: 8px 10px; border-radius: 10px; border: 1px solid rgba(0,0,0,.2); min-width: 280px; }
+    button { padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,.2); cursor: pointer; }
+    .preview { margin-top: 16px; padding: 12px; border: 1px dashed rgba(0,0,0,.2); border-radius: 10px; background: #f8fafc; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>trix-devsantuy — Demo</h1>
+    <p>Toolbar lengkap, hanya fitur ini yang aktif: <strong>Bold, Italic, Heading, Numbered, Bullet</strong> (+ Undo/Redo)</p>
+
+    <div class="row">
+      <input type="text" id="title" placeholder="Judul artikel…" />
+      <button id="save">Simpan (console)</button>
+      <button id="clear">Bersihkan</button>
+    </div>
+
+    <div id="editor"></div>
+
+    <h3>HTML Output</h3>
+    <div id="out" class="preview"></div>
+  </div>
+
+  <script type="module">
+    import DmTrix from "./dist/dm-trix.js";
+
+    const root = document.getElementById("editor");
+    const dm = new DmTrix(root, {
+      placeholder: "Tulis konten di sini…",
+      onChange: (html) => document.getElementById("out").textContent = html
+    });
+
+    document.getElementById("save").addEventListener("click", () => {
+      const payload = {
+        title: document.getElementById("title").value,
+        content: dm.getHTML()
+      };
+      console.log("Payload siap kirim:", payload);
+      alert("Lihat console (F12) untuk payload.");
+    });
+
+    document.getElementById("clear").addEventListener("click", () => {
+      dm.setHTML("");
+      document.getElementById("title").value = "";
+      document.getElementById("out").textContent = "";
+      dm.focus();
+    });
+  </script>
+</body>
+</html>
